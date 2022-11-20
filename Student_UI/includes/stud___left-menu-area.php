@@ -24,6 +24,9 @@
                     </li> -->
 
                     <li>
+                        <a title="Landing Page" href="sms.php" aria-expanded="false"><span class="educate-icon educate-course icon-wrap" aria-hidden="true"></span> <span class="mini-click-non">SMS</span></a>
+                    </li>
+                    <li>
                         <a title="Landing Page" href="stud___set_referral.php" aria-expanded="false"><span class="educate-icon educate-course icon-wrap" aria-hidden="true"></span> <span class="mini-click-non">Referral</span></a>
                     </li>
                     <li>

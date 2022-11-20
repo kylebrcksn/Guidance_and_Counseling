@@ -23,6 +23,14 @@ if(!isset($_SESSION['UserEmail'])){
         header("Location: cancel_appointment.php?app_id=$cancel_id");
     }
 
+    if(isset($_GET['appointment_id'])) {
+        $cancel_id = $_GET['appointment_id'];
+        $app_status = "for appointment";
+        $cancel_appointment = "UPDATE `appointments` SET `app_status`='$app_status' WHERE id = '$cancel_id'";
+        $con->query($cancel_appointment) or die ($con->error);
+        header("Location: gc___all_appointment.php");
+    }
+
     // For Done/Success button
     if(isset($_GET['success_id'])) {
         $success_id = $_GET['success_id'];
@@ -216,7 +224,7 @@ if(!isset($_SESSION['UserEmail'])){
                             <a class="close" data-dismiss="modal" href="gc___all_appointment.php"><i class="fa fa-close"></i></a>
                         </div>
                     </div>
-                    <input type="text" value="<?php echo $id = $_GET['feedback_id']; ?>" />
+                    <!-- <input type="text" value="<?php echo $id = $_GET['feedback_id']; ?>" /> -->
                     
 
                     <form action="appointment_feedback.php" method="POST">
@@ -416,14 +424,23 @@ if(!isset($_SESSION['UserEmail'])){
                                                 <?php if ($row['app_status'] == "done" || $row['app_status'] == "Done") { ?>
                                                     <!-- <div style="display: <?php if($app_row == "done" || $app_row == "Done") { echo "none"; } else { echo "flex"; } ?>; justify-content: center; text-align: center;"> -->
                                                     <div style="justify-content: center; text-align: center;">
-                                                        <a class="btn btn-primary" style="margin-left: 5px; color: white;" 
+                                                        <a class="btn btn-primary" style="margin-left: 10px; color: white;" 
                                                             href="gc___all_appointment.php?feedback_id=<?= $row['id'] ?>">Add Feedback</a>
+                                                    </div>
+                                                 <?php } elseif ($row['app_status'] == "for appointment" || $row['app_status'] == "For Appointment") { ?>
+                                                    <div style="display: flex; justify-content: center;">
+                                                        <a class="btn btn-danger" style="margin-left: 10px; color: white;" 
+                                                            href="gc___all_appointment.php?cancel_id=<?= $row['id'] ?>">Cancel</a>
+                                                        <a class="btn btn-success" style="margin-left: 10px; color: white;" 
+                                                        href="gc___all_appointment.php?appointment_id=<?= $row['id'] ?>">Done</a>
                                                     </div>
                                                 <?php } elseif ($row['app_status'] == "in review" || $row['app_status'] == "In Review") { ?>
                                                     <div style="display: flex; justify-content: center;">
                                                         <a class="btn btn-danger" style="margin-left: 10px; color: white;" 
                                                             href="gc___all_appointment.php?cancel_id=<?= $row['id'] ?>">Cancel</a>
-                                                        <a class="btn btn-success" style="margin-left: 10px; margin-right: 10px; color: white;" 
+                                                   <a class="btn btn-info" style="margin-left: 10px; color: white;" 
+                                                        href="gc___all_appointment.php?appointment_id=<?= $row['id'] ?>">For Appointment</a>
+                                                        <a class="btn btn-success" style="margin-left: 10px; color: white;" 
                                                         href="gc___all_appointment.php?success_id=<?= $row['id'] ?>">Done</a>
                                                     </div>
                                                 <?php } elseif ($row['app_status'] == "cancelled" || $row['app_status'] == "Cancelled") { echo null;

@@ -67,8 +67,8 @@
    <!-- calendar JS
         ============================================ -->
    <script src="js/calendar/moment.min.js"></script>
-   <script src="js/calendar/fullcalendar.min.js"></script>
-   <script src="js/calendar/fullcalendar-active.js"></script>
+<!--    <script src="js/calendar/fullcalendar.min.js"></script>
+   <script src="js/calendar/fullcalendar-active.js"></script> -->
    <!-- maskedinput JS
 		============================================ -->
    <script src="js/jquery.maskedinput.min.js"></script>
@@ -111,7 +111,7 @@
    <!-- tawk chat JS
         ============================================ -->
    <script src="js/tawk-chat.js"></script>
-   <script src="includes/try_calendar.js"></script>
+<!--    <script src="includes/try_calendar.js"></script> -->
 
    <!-- for the modal -->
 

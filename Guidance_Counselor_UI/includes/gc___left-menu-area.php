@@ -56,6 +56,9 @@
                     <li>
                         <a title="Landing Page" href="gc___all-students.php" aria-expanded="false"><span class="educate-icon educate-course icon-wrap" aria-hidden="true"></span> <span class="mini-click-non">Students</span></a>
                     </li>
+                    <li>
+                        <a title="Landing Page" href="sms.php" aria-expanded="false"><span class="educate-icon educate-course icon-wrap" aria-hidden="true"></span> <span class="mini-click-non">SMS</span></a>
+                    </li>
                     <!-- <li>
                         <a class="has-arrow" href="gc___all-students.php" aria-expanded="false"><span class="educate-icon educate-student icon-wrap"></span> <span class="mini-click-non">Students</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
@@ -98,9 +101,7 @@
                             <li><a title="Backup and Restore" href="gc___backup-restore.php"><span class="mini-sub-pro">Back-up and Restore</span></a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a title="Landing Page" href="gc___goodmoral.php" aria-expanded="false"><span class="educate-icon educate-course icon-wrap" aria-hidden="true"></span> <span class="mini-click-non">Good Moral</span></a>
-                    </li>
+
                 </ul>
             </nav>
         </div>

@@ -10,8 +10,8 @@ if(!isset($_SESSION['UserEmail'])){
   
 }else{
 
-    $con = connection();
-    $ref_id = $_GET['id'];
+      $con = connection();
+      $ref_id = $_GET['id'];
 
       $refferal = "SELECT * FROM users LEFT JOIN refferals ON refferals.reffered_user = users.user_id WHERE refferals.ref_id = '$ref_id'";
       $get_referral = $con->query($refferal) or die ($con->error);
@@ -39,7 +39,7 @@ if(!isset($_SESSION['UserEmail'])){
       $update_query = "UPDATE `refferals` SET `source`='$source',`reffered_date`='$reffered_date', ".
                 "`nature`='$nature',`reason`='$reason',`actions`='$actions',`remarks`='$remarks',`ref_status`='$status' WHERE ref_id = '$ref_id'";
       $con->query($update_query) or die ($con->error);
-      header("Location: staff___set_referral.php");
+      header("Location: stud___set_referral.php");
 
     } else {
       echo "Student is not existing.";
@@ -133,9 +133,9 @@ if(!isset($_SESSION['UserEmail'])){
 </head>
 
 <body>
-    <?php include('includes/staff___left-menu-area.php') ?>
-    <?php include('includes/staff___top-menu-area.php') ?>
-    <?php include('includes/staff___mobile_menu.php')  ?>
+    <?php include('includes/stud___left-menu-area.php') ?>
+    <?php include('includes/stud___top-menu-area.php') ?>
+    <?php include('includes/stud___mobile_menu.php')  ?>
 
 
     <div class="breadcome-area">
@@ -222,7 +222,6 @@ if(!isset($_SESSION['UserEmail'])){
                                     </div>
                                 </div>
                             </div>
-
                             <div class="form-group-inner">
                                 <div class="row">
                                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
@@ -347,7 +346,7 @@ if(!isset($_SESSION['UserEmail'])){
         </div>
     </div>
     <!-- Static Table End -->
-    <?php include('includes/staff___footer.php')   ?>
+    <?php include('includes/stud___footer.php')   ?>
     </div>
 
     <!-- jquery

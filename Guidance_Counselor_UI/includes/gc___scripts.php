@@ -15,12 +15,12 @@
            </div>
        </div>
    </div> -->
-
+   <script src="js/vendor/jquery-1.12.4.min.js"></script>
 
 
    <!-- jquery
         ============================================ -->
-   <script src="js/vendor/jquery-1.12.4.min.js"></script>
+
    <!-- bootstrap JS
         ============================================ -->
    <script src="js/bootstrap.min.js"></script>
@@ -63,8 +63,8 @@
    <!-- calendar JS
         ============================================ -->
    <script src="js/calendar/moment.min.js"></script>
-   <script src="js/calendar/fullcalendar.min.js"></script>
-   <script src="js/calendar/fullcalendar-active.js"></script>
+<!--    <script src="js/calendar/fullcalendar.min.js"></script>
+   <script src="js/calendar/fullcalendar-active.js"></script> -->
    <!-- maskedinput JS
 		============================================ -->
    <script src="js/jquery.maskedinput.min.js"></script>
@@ -79,7 +79,13 @@
    <script src="js/form-validation/jquery.validate.min.js"></script>
    <script src="js/form-validation/form-active.js"></script>
 
-
+    <!-- ✅ load JS for Select2 ✅ -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"
+      integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
    <!-- this is for the tables  -->
    <!-- data table JS
     		============================================ -->

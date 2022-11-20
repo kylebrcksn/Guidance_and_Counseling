@@ -1,6 +1,6 @@
 <?php
 	 session_start();
-include_once("../connections/connection.php");
+	 $connection = mysqli_connect("localhost", "root" , "" , "content");
 
 	if(isset($_POST['submit']))    
 	{

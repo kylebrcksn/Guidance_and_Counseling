@@ -1,4 +1,25 @@
-<?php session_start();?>
+<?php session_start();
+
+$id = $_SESSION['UserId'];
+// Create connection
+$conn = new mysqli('localhost', 'root', '', 'guidance_and_counseling');
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT id_number FROM users WHERE user_id='$id'";
+$result = $conn->query($sql);
+
+$idnumber = "";
+
+while($row = $result->fetch_assoc()) {
+  $idnumber = $row['id_number'];
+}
+
+
+
+?>
   <!doctype html>
 <html class="no-js" lang="en">
 
@@ -110,7 +131,7 @@
               </div>
               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <ul class="breadcome-menu">
-                  <li><a href="#">Home</a> <span class="bread-slash">/</span>
+                  <li><a href="#">Home </a> <span class="bread-slash">/</span>
                   </li>
                   <li><span class="bread-blod">Appointment Table</span>
                   </li>
@@ -271,21 +292,21 @@
                     <tr>
                       <th data-field="appoint_subject">Appointment Subject</th>
                       <th data-field="appoint_reason">Appointment Reason</th>
-                      <th data-field="appoint_concern">Concern</th>
+                      <!-- <th data-field="appoint_concern">Concern</th> -->
                       <th data-field="appoint_date">Date</th>
                       <th data-field="appoint_time">Time</th>
                       <th data-field="appoint_type">Type</th>
                       <th data-field="appoint_link">Meeting Link</th>
                       <th data-field="appoint_status">Status</th>
-                      <th>Cancel</th>
-
+                      <th data-field="appoint_delete">Cancel</th>
                     </tr>
                   </thead>
+                  <tbody>
                   <tbody>
                   <?php
                     $connection = mysqli_connect('localhost', 'root', '', 'guidance_and_counseling');
 
-                    $query = "SELECT * FROM appointment_tbl";
+                    $query = "SELECT * FROM appointments WHERE id_number='$idnumber'";
                     $query_run = mysqli_query($connection, $query);
 
                     if (mysqli_num_rows($query_run) > 0) {
@@ -293,19 +314,25 @@
                     ?>
 
                     <tr>
-                      <td><?= $row['APP_SUBJ']?></td>
-                      <td><?= $row['APP_REASON']?></td>
-                      <td><?= $row['APP_CONCERN']?></td>
-                      <td><?= $row['APP_DATE']?></td>
-                      <td><?= $row['APP_TIME']?></td>
-                      <td><?= $row['APP_TYPE']?></td>
-                      <td><?= $row['APP_LINK']?></td>
-                      <td><?= $row['APP_STATUS']?></td>
+                      <td><?= $row['subject']?></td>
+                      <td><?= $row['info']?></td>
+                      <td><?= $row['date']?></td>
+                      <td><?= $row['timeslot']?></td>
+                      <td><?= $row['appointment_type']?></td>
+                      <td><?= $row['meeting_link']?></td>
+                      <td><?= $row['app_status']?></td>
                       <td>
-                        <a href= "gc___staff_profile.php">
-                      <button type="submit" name="delete_btn" class="btn btn-danger">Cancel</button>
-                      </a>
-                     </td>
+                        <button class="btn btn-xs btn-success"><?= $row['app_status'] ?></button>
+                      </td>
+
+                      <td>
+                        <?php if($row['app_status'] == "completed" || $row['app_status'] == "Completed") { echo null; } else { ?>
+                          <form action="thecode.php" method="post">
+                            <input type="hidden" name="delete_username_id" value="<?php echo $row['GC_USER_ID']; ?>">
+                            <button type="submit" name="delete_btn" class="btn btn-danger">Cancel</button>
+                          </form>
+                        <?php } ?>
+                      </td>
                      </tr>
                      <?php
                       }

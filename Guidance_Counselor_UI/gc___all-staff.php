@@ -176,7 +176,7 @@ if (!isset($_SESSION['UserEmail'])) {
                       <label class="login2 pull-right">Staff ID</label>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                      <input type="text" name="staff_id" class="form-control" placeholder="Enter Staff ID" required />
+                      <input type="text" name="staff_id" class="form-control" placeholder="Enter Staff ID" required/>
                     </div>
                   </div>
                 </div>
@@ -187,7 +187,7 @@ if (!isset($_SESSION['UserEmail'])) {
                       <label class="login2 pull-right">First Name</label>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                      <input type="text" name="first_name" class="form-control" placeholder="Enter First Name" required />
+                      <input type="text" name="first_name" class="form-control" placeholder="Enter First Name" required/>
                     </div>
                   </div>
                 </div>
@@ -198,7 +198,7 @@ if (!isset($_SESSION['UserEmail'])) {
                       <label class="login2 pull-right">Middle Name</label>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                      <input type="text" name="middle_name" class="form-control" placeholder="Enter Middle Name" required />
+                      <input type="text" name="middle_name" class="form-control" placeholder="Enter Middle Name" required/>
                     </div>
                   </div>
                 </div>
@@ -209,7 +209,7 @@ if (!isset($_SESSION['UserEmail'])) {
                       <label class="login2 pull-right">Last Name</label>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                      <input type="text" name="last_name" class="form-control" placeholder="Enter Last Name" required />
+                      <input type="text" name="last_name" class="form-control" placeholder="Enter Last Name" required/>
                     </div>
                   </div>
                 </div>
@@ -220,7 +220,7 @@ if (!isset($_SESSION['UserEmail'])) {
                       <label class="login2 pull-right">Address</label>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                      <input type="text" name="address" class="form-control" placeholder="Enter Address" required />
+                      <input type="text" name="address" class="form-control" placeholder="Enter Address" required/>
                     </div>
                   </div>
                 </div>
@@ -388,7 +388,7 @@ if (!isset($_SESSION['UserEmail'])) {
                         <th>Address</th>
                         <th>Contact Number</th>
                         <th>Position</th>
-                        <th>Action</th>
+                        <th>Profile</th>
                       </tr>
                     </thead>
 
@@ -413,21 +413,11 @@ if (!isset($_SESSION['UserEmail'])) {
                             <td><?= $row['contact'] ?></td>
                             <td><?= $row['position'] ?></td>
 
-                            <!-- <td>
-                              <a href="gc___staff_profile.php?id=<?= $row['user_id'] ?>">
-                                <button type="button" name="view_profile_btn" class="btn btn-primary">View</button></td>
-                            <td><button type="button" name="view_profile_btn" class="btn btn-primary">Edit</button></td>
-                            </a> -->
-
                             <td>
-                              <div style="display: flex; justify-content: center;">
-                                <a class="btn btn-primary" style="margin-left: 1px; color: white;"
-                                  href="gc___staff_profile.php?id=<?= $row['user_id'] ?>">View</a>
-                                <a class="btn btn-danger" style="margin-left: 10px; margin-right: 1px; color: white;"
-                                  href="gc___staff_profile.php?id=<?= $row['user_id'] ?>">Edit</a>
-                              </div>
+                              <a href="gc___staff_profile.php?id=<?= $row['user_id'] ?>">
+                                <button type="button" name="view_profile_btn" class="btn btn-primary">View</button>
+                              </a>
                             </td>
-
                           </tr>
 
                         <?php

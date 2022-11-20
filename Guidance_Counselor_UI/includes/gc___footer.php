@@ -1,3 +1,10 @@
+
+
+<!-- <div id="launch" class="smith-launcher-frame">
+  <div class="smith-launcher">
+  </div>
+</div> -->
+
 <div class="footer-copyright-area">
     <div class="container-fluid">
         <div class="row">
@@ -9,3 +16,4 @@
         </div>
     </div>
 </div>
+

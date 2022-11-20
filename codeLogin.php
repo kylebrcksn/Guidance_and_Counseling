@@ -22,21 +22,46 @@ if (isset($_POST['login_btn'])) {
         $_SESSION['UserEmail'] = $row['email'];
         $_SESSION['UserId'] = $row['user_id'];
         $_SESSION['UserRole'] = $row['role'];
+
+        $id = $row['user_id'];
+
+        $query = "UPDATE users SET active_status='1' WHERE user_id='$id'";
+        $query_run = mysqli_query($con, $query);
+
         header('Location: ./Guidance_Counselor_UI/gc___dashboard.php');
     }elseif($row["role"] == 2){
         $_SESSION['UserEmail'] = $row['email'];
         $_SESSION['UserId'] = $row['user_id'];
         $_SESSION['UserRole'] = $row['role'];
+
+        $id = $row['user_id'];
+
+        $query = "UPDATE users SET active_status='1' WHERE user_id='$id'";
+        $query_run = mysqli_query($con, $query);
+
+
         header('Location: ./Staff_UI/staff___dashboard.php');
     }elseif($row["role"] == 3){
         $_SESSION['UserEmail'] = $row['email'];
         $_SESSION['UserId'] = $row['user_id'];
         $_SESSION['UserRole'] = $row['role'];
+
+        $id = $row['user_id'];
+
+        $query = "UPDATE users SET active_status='1' WHERE user_id='$id'";
+        $query_run = mysqli_query($con, $query);
+
         header('Location: ./Student_UI/stud___dashboard.php');
     }elseif($row["role"] == 4){
         $_SESSION['UserEmail'] = $row['email'];
         $_SESSION['UserId'] = $row['user_id'];
         $_SESSION['UserRole'] = $row['role'];
+
+        $id = $row['user_id'];
+
+        $query = "UPDATE users SET active_status='1' WHERE user_id='$id'";
+        $query_run = mysqli_query($con, $query);
+        
         header('Location: ./Guidance_Counselor_UI/gc___dashboard.php');
     }
     

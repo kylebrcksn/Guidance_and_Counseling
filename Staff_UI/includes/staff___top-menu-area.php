@@ -1,8 +1,21 @@
+<?php
 
+include_once("./../connections/connection.php");
+
+$con = connection();
+    
+    if(isset($_SESSION['UserId'])){
+        $user_id = $_SESSION['UserId'];
+        $user_query = "SELECT first_name, last_name FROM users WHERE user_id = '$user_id'";
+        $user_con = $con->query($user_query) or die ($con->error);
+        $row_user = $user_con->fetch_assoc();
+    }
+?>
 <!-- Start Welcome area -->
-    <div class="all-content-wrapper">
+    <div class="all-content-wrapper" id="store-data" data-id="<?php echo $_SESSION['UserId'] ?>">
         <div class="container-fluid">
             <div class="row">
+
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="logo-pro">
                         <a href="index.html"><img class="main-logo" src="img/logo/.png" alt="" /></a>
@@ -10,6 +23,7 @@
                 </div>
             </div> 
         </div>
+
         <div class="header-advance-area">
             <div class="header-top-area">
                 <div class="container-fluid">
